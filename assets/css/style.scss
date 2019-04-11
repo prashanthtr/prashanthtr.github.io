@@ -1,0 +1,115 @@
+
+---
+---
+
+@import "{{ site.theme }}";
+
+
+html, body {  /* Select and size the outermost elements so other elements can be set in % */
+	height:100%;
+	width:99%;
+}
+
+body {
+   font: 24px Helvetica;
+   background-color: white;
+  }
+
+  #main {  /* select element with id="main" */
+   min-height: 75%;
+   max-height: 90%;
+   height: 90%;
+   margin: 0px;
+   padding: 0px;
+   display:  flex;
+   flex-flow: row;
+   }
+
+  #main > #centerDiv {
+   margin: 4px;
+   padding: 5px;
+   border: 0px solid grey;
+   border-radius: 0pt;
+   background: #ffffff;
+   flex: 2 1 60%;
+   order: 2;
+   overflow: scroll;
+   text-align: center;
+   justify-content: center;
+   overflow: hidden;
+   }
+
+  #main > nav {
+   margin: 4px;
+   padding: 5px;
+   border-right: 3px double grey;
+   border-radius: 0pt;
+   background: #fffffff;
+           flex: 1 6 20%;
+           order: 1;
+   font-size: 15px;
+   }
+
+
+  #main > aside {
+   margin: 4px;
+   padding: 5px;
+   border-left: 1px solid #red;
+   border-radius: 7pt;
+   background: 	#ffffff;
+           flex: 1 6 20%;
+           order: 3;
+   font-size: 15px;
+
+  }
+
+  header, footer {  /* select all header and footer elements */
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    border-radius: 0pt;
+    background: #ffffff;
+    text-align: center;
+  }
+
+  header {
+    min-height: 5%;
+    max-height:10%;
+    min-width:25%;
+    border-bottom: 3px double grey;
+
+  }
+
+  footer {    /* override these attributes just for the footer elements */
+    font-size: 10pt;
+    text-align: center;
+    min-height: 0%;
+    max-height: 20%;
+    border: 1px solid #eebb55;
+  }
+
+  /* Changes layout under these conditions : Too narrow to support three columns */
+  /* "at-rules" using the '@' sign is an "advanced" feature */
+  @media all and (max-width: 640px) {
+
+    #main, #page {
+      flex-flow: column;
+      flex-direction: column;
+    }
+
+    #nav {
+      flex-flow: row;
+      flex-direction: row;
+    }
+
+    #main > article, #main > nav, #main > aside {
+      /* Return them to document order */
+      order: 0;
+    }
+
+    #main > nav, #main > aside, header, footer {
+      min-height: 50px;
+      max-height: 50px;
+    }
+
+  };
