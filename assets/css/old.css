@@ -21,9 +21,9 @@ body {
   #main > #centerDiv {
    margin: 4px;
    padding: 5px;
-   border: 1px solid #cccc33;
-   border-radius: 7pt;
-   background: #000000;
+   border: 0px solid grey;
+   border-radius: 0pt;
+   background: #ffffff;
    flex: 2 1 60%;
    order: 2;
    overflow: scroll;
@@ -35,9 +35,9 @@ body {
   #main > nav {
    margin: 4px;
    padding: 5px;
-   border: 1px solid #8888bb;
-   border-radius: 7pt;
-   background: #bedede;
+   border-right: 3px double grey;
+   border-radius: 0pt;
+   background: #fffffff;
            flex: 1 6 20%;
            order: 1;
    font-size: 15px;
@@ -47,9 +47,9 @@ body {
   #main > aside {
    margin: 4px;
    padding: 5px;
-   border: 1px solid #8888bb;
+   border-left: 1px solid #red;
    border-radius: 7pt;
-   background: 	#bedede;
+   background: 	#ffffff;
            flex: 1 6 20%;
            order: 3;
    font-size: 15px;
@@ -134,15 +134,17 @@ body {
    display: block;
    margin: 4px;
    padding: 5px;
-   border: 1px solid #eebb55;
-   border-radius: 7pt;
-   background: #3edede;
+   border-radius: 0pt;
+   background: #ffffff;
    text-align: center;
    }
 
   header {
     min-height: 5%;
     max-height:10%;
+    min-width:25%;
+    border-bottom: 3px double grey;
+
   }
 
   footer {    /* override these attributes just for the footer elements */
@@ -150,6 +152,7 @@ body {
    text-align: center;
    min-height: 0%;
    max-height: 20%;
+   border: 1px solid #eebb55;
   }
 
   .tab1 {
