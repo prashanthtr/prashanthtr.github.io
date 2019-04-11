@@ -5,7 +5,7 @@ html, body {  /* Select and size the outermost elements so other elements can be
 
 body {
    font: 24px Helvetica;
-   background-color: black;
+   background-color: white;
   }
 
   #main {  /* select element with id="main" */
