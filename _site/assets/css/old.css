@@ -1,0 +1,249 @@
+html, body {  /* Select and size the outermost elements so other elements can be set in % */
+	height:100%;
+	width:99%;
+}
+
+body {
+   font: 24px Helvetica;
+   background-color: white;
+  }
+
+  #main {  /* select element with id="main" */
+   min-height: 75%;
+   max-height: 90%;
+   height: 90%;
+   margin: 0px;
+   padding: 0px;
+   display:  flex;
+   flex-flow: row;
+   }
+
+  #main > #centerDiv {
+   margin: 4px;
+   padding: 5px;
+   border: 0px solid grey;
+   border-radius: 0pt;
+   background: #ffffff;
+   flex: 2 1 60%;
+   order: 2;
+   overflow: scroll;
+   text-align: center;
+   justify-content: center;
+   overflow: hidden;
+   }
+
+  #main > nav {
+   margin: 4px;
+   padding: 5px;
+   border-right: 3px double grey;
+   border-radius: 0pt;
+   background: #fffffff;
+           flex: 1 6 20%;
+           order: 1;
+   font-size: 15px;
+   }
+
+
+  #main > aside {
+   margin: 4px;
+   padding: 5px;
+   border-left: 1px solid #red;
+   border-radius: 7pt;
+   background: 	#ffffff;
+           flex: 1 6 20%;
+           order: 3;
+   font-size: 15px;
+
+  }
+
+  table{
+    width:85%;
+    border: 0px solid #000000
+  }
+
+  .td1{
+    font-size: 10px;
+    width:10%;
+  }
+
+  /* styling for the sliders*/
+  .c1 {
+    -webkit-appearance: none;
+     width: 100%;
+    border-radius: 20px;
+    background-color: #bedede;
+  }
+
+
+  .c2 {
+    -webkit-appearance: none;
+    width: 50%;
+    border-radius: 20px;
+    background-color: #3ebede;
+  }
+
+
+  .t1 {
+    width: 100%;
+    background-color: transparent;
+    border: 0px solid;
+    color: red;
+    font-size: 14px;
+  }
+
+.t2 {
+    width: 30px;
+    background-color: transparent;
+    border: 0px solid;
+    color: red;
+    font-size: 14px;
+}
+
+.t3 {
+  width: 30px;
+  background-color: transparent;
+  border: 1px dotted;
+  color: red;
+  font-size: 14px;
+}
+
+
+  .b1 {
+    background-color: #30dede;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .hidden1 {
+    background-color: #000000;
+    border: none;
+    width: 20%;
+  }
+
+
+  #player {
+    width: 200px;
+   }
+
+  header, footer {  /* select all header and footer elements */
+   display: block;
+   margin: 4px;
+   padding: 5px;
+   border-radius: 0pt;
+   background: #ffffff;
+   text-align: center;
+   }
+
+  header {
+    min-height: 5%;
+    max-height:10%;
+    min-width:25%;
+    border-bottom: 3px double grey;
+
+  }
+
+  footer {    /* override these attributes just for the footer elements */
+   font-size: 10pt;
+   text-align: center;
+   min-height: 0%;
+   max-height: 20%;
+   border: 1px solid #eebb55;
+  }
+
+  .tab1 {
+    width: 125px;
+  }
+
+  /* stylish slider  on click */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 26px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+
+  input:checked + .slider {
+    background-color: #3ebede;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #3ebede;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  /* Changes layout under these conditions : Too narrow to support three columns */
+  /* "at-rules" using the '@' sign is an "advanced" feature */
+  @media all and (max-width: 640px) {
+
+   #main, #page {
+    flex-flow: column;
+    flex-direction: column;
+   }
+
+   #nav {
+    flex-flow: row;
+    flex-direction: row;
+   }
+
+   #main > article, #main > nav, #main > aside {
+    /* Return them to document order */
+            order: 0;
+   }
+
+   #main > nav, #main > aside, header, footer {
+    min-height: 50px;
+    max-height: 50px;
+   }
+
+};
